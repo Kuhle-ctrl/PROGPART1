@@ -13,14 +13,14 @@ import static org.junit.Assert.*;
 
 public class LoginTest {
     @Test 
-    public void testUsernameVaild(){
+    public void testUsernameValid(){
         Login login = new Login();
         assertTrue(login.checkUserName("kyl_1"));
     }
     @Test
     public void testUsernameInvalid(){
         Login login = new Login();
-        assertFalse(login.checkUserName("kyle!!!!!!!"));
+        assertFalse(login.checkUserName("kyle!!!!!!"));
     }    
      @Test
      public void testPasswordValid(){
