@@ -110,4 +110,19 @@ public class MessageManager {
             System.out.println("-----------------------");
         }
     }
-}
+         public String[] readStoredMessagesFromJson(String filePath) {
+        try {
+            // Read JSON file contents into a string
+            String jsonContent = new String(java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(filePath)));
+            
+            // Clean formatting and split into an array
+            jsonContent = jsonContent.replace("[", "").replace("]", "").replace("\"", "").replace("{", "").replace("}", "");
+            String[] storedMessagesArray = jsonContent.split(",");
+            
+            return storedMessagesArray;
+        } catch (java.io.IOException e) {
+            System.out.println("Error reading JSON file: " + e.getMessage());
+            return new String[0];
+        }
+    }
+    }

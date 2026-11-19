@@ -49,7 +49,7 @@ public class Login {
             if (cellNumber == null){
                 return false;
             }
-            String regex = "^\\+\\d{10,12}$";
+            String regex = "\\+\\d{11}";
             return  Pattern.matches(regex, cellNumber);
     }
     // Handles user registration logic and return brief messages
